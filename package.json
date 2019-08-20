@@ -1,0 +1,52 @@
+{
+  "name": "modifiable-js-ioc",
+  "version": "0.0.3",
+  "description": "Universal IoC module for JavaScript and TypeScript, backend and frontend.",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "repository": {
+    "url": "https://github.com/TanoCuile/modifiable-js-ioc.git",
+    "type": "git"
+  },
+  "scripts": {
+    "test": "mocha --require ts-node/register test/**/*.spec.ts",
+    "prepublish": "npm run build",
+    "compile": "npm run build",
+    "build": "tsc",
+    "lint": "tslint --project ."
+  },
+  "keywords": [
+    "ioc",
+    "javascript",
+    "nodejs",
+    "madular",
+    "architecture"
+  ],
+  "author": "strifinder@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/inquirer": "^6.5.0",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.6.8",
+    "chai": "^4.2.0",
+    "gts": "^1.0.0",
+    "husky": "^3.0.2",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test",
+      "pre-push": "npm run lint && npm test"
+    }
+  },
+  "dependencies": {
+    "inquirer": "^6.5.1"
+  }
+}
